@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  mysql:  ##（服务1）
+    restart: always
+    image: hub.c.163.com/library/mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "12345678"
+    volumes:  #数据持久化，落到本地盘上  本地:docker容器
+      - mysqldb:/var/lib/mysql   # 卷标:docker容器  这种方式是不知道存储在本地的绝对路径，需要使用docker volume ls 和docker volume inspect 容器卷标 查看。 docker volume rm 容器卷标  删除卷
+      - ./docker/mysql/my.cnf:/etc/my.cnf  #卷标:容器  这种方式是使用本地绝对路径的方式，可以查看到数据存放到本地的具体路径  
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d/
+
+volumes:
+    mysqldb: {}

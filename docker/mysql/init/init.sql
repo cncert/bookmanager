@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS book DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+CREATE USER 'book'@'%' IDENTIFIED BY '12345678';
+GRANT All privileges ON book.* TO 'book'@'%';
