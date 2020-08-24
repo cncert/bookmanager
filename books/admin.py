@@ -8,6 +8,7 @@ admin.site.site_title = '图书管理系统'
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ('username', 'email', )
+    fields = ('username', 'email')
 
 
 class BookAdmin(admin.ModelAdmin):

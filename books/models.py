@@ -31,7 +31,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(verbose_name="邮箱", blank=True)
     is_staff = models.BooleanField(
         _('staff status'),
-        default=False,
+        default=True,
         help_text=_('Designates whether the user can log into this admin site.'),
     )
     is_active = models.BooleanField(
