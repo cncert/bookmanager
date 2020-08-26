@@ -81,7 +81,7 @@ class Book(models.Model):
     """定义书籍属性"""
     name = models.CharField(max_length=512, verbose_name="书名")
     author = models.CharField(max_length=512, verbose_name="作者")
-    reader = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, default="", verbose_name="借书人")
+    reader = models.ForeignKey(User, related_name="reader", on_delete=models.SET_NULL, null=True, blank=True, default="", verbose_name="借书人")
     borrow_date = models.DateField(null=True, blank=True, verbose_name="借书时间")
     return_date = models.DateField(null=True, blank=True, verbose_name="还书时间")
     reminder = models.BooleanField(default=True, verbose_name="到期发送提醒")
