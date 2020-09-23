@@ -28,3 +28,7 @@ DATABASES = {
         "OPTIONS": {"charset": "utf8mb4",},
     }
 }
+
+# email config
+EMAIL_HOST_USER = get_env_variable("EMAIL_HOST_USER", default_value=None)
+EMAIL_HOST_PASSWORD = get_env_variable("EMAIL_HOST_PASSWORD", default_value=None)

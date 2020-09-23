@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-
+from django.core.exceptions import ImproperlyConfigured
 
 def get_env_variable(var_name, default_value=None):
     try:
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'books.apps.BooksConfig',
+    'django_crontab',
 ]
 
 AUTH_USER_MODEL = 'books.User'
@@ -105,6 +106,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CRONJOBS = [
+    ('*/1 * * * *', 'books.tasks.scan_user', '>> /tmp/cron.log')
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -132,6 +136,5 @@ SIMPLEUI_HOME_QUICK = False
 SIMPLEUI_ANALYSIS = False
 SIMPLEUI_STATIC_OFFLINE = True
 
-# enail config
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+# email
+SUBJECT = "换书时间到啦"
