@@ -30,5 +30,5 @@ DATABASES = {
 }
 
 # email config
-EMAIL_HOST_USER = get_env_variable("EMAIL_HOST_USER", default_value=None)
-EMAIL_HOST_PASSWORD = get_env_variable("EMAIL_HOST_PASSWORD", default_value=None)
+EMAIL_HOST_USER = get_env_variable("EMAIL_HOST_USER", default_value="wangteng@cnnic.cn")
+EMAIL_HOST_PASSWORD = get_env_variable("EMAIL_HOST_PASSWORD", default_value="")
