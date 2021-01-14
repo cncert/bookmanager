@@ -8,6 +8,7 @@ chardet==3.0.4
 cryptography==3.0
 distro==1.5.0
 Django==2.2.3
+django-crontab==0.7.1
 django-simpleui==2020.7
 docker==4.3.1
 dockerpty==0.4.1
@@ -23,6 +24,7 @@ pycparser==2.20
 pylint==2.6.0
 PyNaCl==1.4.0
 pyrsistent==0.16.0
+python-dateutil==2.8.1
 python-dotenv==0.14.0
 pytz==2020.1
 PyYAML==5.3.1

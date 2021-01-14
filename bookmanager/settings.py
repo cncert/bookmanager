@@ -9,10 +9,12 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
-
 import os
-from django.core.exceptions import ImproperlyConfigured
 
+from django.core.exceptions import ImproperlyConfigured
+from dotenv import load_dotenv
+
+load_dotenv() 
 def get_env_variable(var_name, default_value=None):
     try:
         return os.environ[var_name]
@@ -107,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 CRONJOBS = [
-    ('*/1 * * * *', 'books.tasks.scan_user', '>> /tmp/cron.log')
+    ('*/2 * * * *', 'books.tasks.scan_user','> /tmp/cron.log')
 ]
 
 # Internationalization
