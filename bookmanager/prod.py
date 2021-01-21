@@ -29,7 +29,7 @@ DATABASES = {
     }
 }
 
-# email config
+# email config  from .env
 EMAIL_HOST_USER = get_env_variable("EMAIL_HOST_USER", default_value="")
 EMAIL_HOST_PASSWORD = get_env_variable("EMAIL_HOST_PASSWORD", default_value="")
 EMAIL_SERVER = get_env_variable("EMAIL_SERVER", default_value="")

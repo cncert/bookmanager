@@ -4,6 +4,9 @@
 在根目录创建.env文件：
 EMAIL_HOST_USER="your eamil"
 EMAIL_HOST_PASSWORD="your passwd"
+EMAIL_SERVER="smtp.xx"
+EMAIL_SERVER_PORT=25
+MANAGER_NAME = ""
 
 1. 添加定时任务
 python manage.py crontab add  --settings=bookmanager.prod
