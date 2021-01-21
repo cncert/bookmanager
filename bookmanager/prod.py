@@ -16,7 +16,7 @@ REDIS_DECODE_RESPONSES = True
 
 ENV = "prod"
 STATIC_ROOT = "/var/www/book/static/"
-DEBUG = True
+DEBUG = False
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
@@ -32,3 +32,6 @@ DATABASES = {
 # email config
 EMAIL_HOST_USER = get_env_variable("EMAIL_HOST_USER", default_value="")
 EMAIL_HOST_PASSWORD = get_env_variable("EMAIL_HOST_PASSWORD", default_value="")
+EMAIL_SERVER = get_env_variable("EMAIL_SERVER", default_value="")
+EMAIL_SERVER_PORT = get_env_variable("EMAIL_SERVER_PORT", default_value=465)
+MANAGER_NAME = get_env_variable("MANAGER_NAME", default_value="")
